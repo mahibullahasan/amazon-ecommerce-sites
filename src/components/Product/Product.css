@@ -10,8 +10,15 @@
   color: blue;
   font-weight: 400;
 }
-button {
-  background-color: #f7c24a;
-  border-color: #f7c24a;
+.add-cart-btn {
+  background-color: gold;
+  border: 1px solid gold;
   border-radius: 5px;
+  width: 150px;
+  height: 25px;
 }
+.product-area{
+  margin-left: 20px;
+}
+
+
