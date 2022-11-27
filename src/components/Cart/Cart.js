@@ -40,7 +40,7 @@ const Cart = (props) => {
             <p><small>Total before Tax:</small> {total.toFixed(2)}</p>
             <p>Tax + VAT: {tax.toFixed(2)}</p>
             <h3>Order Total: {grandTotal} </h3>
-            <button>Review your order</button>
+            
             
 
         </div>

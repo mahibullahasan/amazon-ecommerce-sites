@@ -9,7 +9,9 @@ const Shop = () => {
   const [products, setProducts] = useState(first10);
   const [cart, setCart] = useState([]);
 
-  const handleAddProduct = (product) =>{
+
+
+  const handleAddProduct = (product) =>{  
     const newCart = [...cart,product];
     setCart(newCart);
   }
