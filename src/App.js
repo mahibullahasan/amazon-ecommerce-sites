@@ -11,6 +11,7 @@ import {
 import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 import NoPage from './components/NoPage/NoPage';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 
 
 function App() {
@@ -25,12 +26,8 @@ function App() {
           <Route path='/shop' element={<Shop/>}></Route>
           <Route path='/review' element={<Review/>}></Route>
           <Route path='/inventory' element={<Inventory/>}></Route>
+          <Route path='/product/:productkey' element={<ProductDetail/>}></Route>
           <Route path='*' element={<NoPage/>}></Route>
-          
-          
-
-
-
 
 
         </Routes>
