@@ -6,7 +6,7 @@ const getUser = () => {
         const newUser = 'user-' + new Date().getTime();
         sessionStorage.setItem('userId', newUser)
         return newUser;
-    }
+    } 
 }
 
 
