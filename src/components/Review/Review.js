@@ -2,13 +2,22 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import fakeData from '../../fakeData';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import './Review.css'
 import Reviewitem from './Reviewitem/Reviewitem';
+import thankYouimage from '../../images/thankyou.gif';
 
 const Review = () => {
     const [cart, setCart] = useState([]);
+    const [orderPlaced, setOrderPlaced] = useState(false);
+
+    const handlePlaceOrder = () => {
+        setCart([]);
+        setOrderPlaced(true);
+        processOrder();
+        
+    }
 
     const removeProduct = (productKey) =>{        
         const newCart = cart.filter(pd => pd.key !== productKey)
@@ -27,7 +36,12 @@ const Review = () => {
         return product;
         });
         setCart(cartProducts);
-    },[])
+    },[]);
+
+    let thankyou;
+    if(orderPlaced){
+        thankyou = <img className='thankyouimg' src={thankYouimage} alt="" />
+    } 
 
     return (
         <div className='twin-container'>
@@ -40,9 +54,17 @@ const Review = () => {
 
                         </Reviewitem>)
                 }
+                {
+                    thankyou
+                }
+            
+
            </div>
            <div className='cart-container'>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart}>
+            <button onClick={handlePlaceOrder} className='add-cart-btn'>Place Order</button>
+            </Cart>
+            
 
            </div>
                 
